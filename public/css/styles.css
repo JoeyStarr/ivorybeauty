@@ -1,0 +1,210 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Comfortaa;
+}
+
+
+.entete
+{
+	width: 100%;
+	height: 120px;
+	background: red;
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+.entete h1
+{
+	color: white;
+	font-size: 52px;
+	font-family: Comfortaa;
+}
+
+.menuBottom
+{
+	display: flex;
+	width: 100%;
+	height: 130px;
+	background: blue;
+	align-items: center;
+	justify-content: space-around;
+	padding: 10px 5px;
+	position: fixed;
+	bottom: 0px;
+}
+
+.menuBottom-child
+{
+	width: 100%;
+	height: 130px;
+	background:green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menuBottom-child:hover
+{
+	color: white;
+	background:yellow;
+}
+
+.menuPage{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 10;
+	background: white;
+}
+
+.menuentete
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 200px;
+	background: pink;
+}
+
+.menuentete h2
+{
+	font-size: 60px;
+}
+
+.croix
+{
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menulistcate
+{
+	display: flex;
+	flex-direction: column;
+	background: white;
+	justify-content: center;
+	margin-top: 100px;
+}
+.menulistcate h3
+{
+	font-size: 70px;
+	padding: 50px 20px;
+}
+
+.footermenupage
+{
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	display: flex;
+	bottom: 0px;
+	background: red;
+	justify-content: center;
+	align-items: center;
+}
+
+.footermenupage h2{
+	color: white;
+	font-size: 52px;
+}
+
+.menuPanier
+{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 10;
+	background: pink;
+}
+
+.entetepanier
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 200px;
+	background: white;
+}
+
+.entetepanier h2
+{
+	font-size: 60px;
+}
+
+.containerpanier
+{
+	display: flex; 
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	overflow: scroll;
+}
+
+.articlepanier
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 30px 10px;
+}
+
+.articlepanier img
+{
+	border-radius: 40px;
+}
+
+.articlepanier p
+{
+	font-size: 62px;
+}
+
+.articlepanier a 
+{
+	text-decoration: none;
+	padding: 10px 0 0 0;
+	font-size: 48px;
+}
+
+.btn-commande 
+{
+	bottom: 0px;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.btn-com 
+{
+	text-decoration: none;
+	position: absolute;
+	bottom: 0px;
+	background: white;
+	height: 150px;
+	width: 100%;
+	font-size: 48px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	padding: 30px 0 0 0;
+}
+
+.btn-com:focus
+{
+	text-decoration: none;
+}
