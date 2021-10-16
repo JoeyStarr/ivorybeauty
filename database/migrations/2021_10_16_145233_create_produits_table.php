@@ -17,6 +17,7 @@ class CreateProduitsTable extends Migration
             $table->id();
             $table->string('nameProd');
             $table->mediumText('libelleProd');
+            $table->integer('prix');
 
             $table->unsignedBigInteger('categorie_id');
             $table->foreign('categorie_id')->references('id')->on('categories');
