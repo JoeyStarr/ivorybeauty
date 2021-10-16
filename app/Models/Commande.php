@@ -2,17 +2,16 @@
 
 namespace App\Models;
 
-
-use App\Models\Produit;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categorie extends Model
+class Commande extends Model
 {
     use HasFactory;
 
-    public function produits()
+    public function client()
     {
-        return $this->hasMany(Produit::class);
+        return $this->belongsTo(Client::class);
     }
 }
