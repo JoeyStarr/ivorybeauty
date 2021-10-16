@@ -25,6 +25,15 @@ Route::get('/contact', function () {
     return view('pages/contact');
 })->name('contact');
 
+Route::get('/categorie', function () {
+    return view('pages/categorie');
+})->name('categorie');
+
+Route::get('/produit', function () {
+    return view('pages/produit');
+})->name('produit');
+
+
 Route::get('/confidentialite', function () {
     return view('pages/politique/confidentialite');
 })->name('confident');
@@ -32,12 +41,6 @@ Route::get('/confidentialite', function () {
 Route::get('/remboursement', function () {
     return view('pages/politique/remboursement');
 })->name('rembourser');
-
-
-Route::get('/produit', function () {
-    return view('pages/produit');
-})->name('produit');
-
 
 Route::get('/validation', function () {
     return view('pages/validation');

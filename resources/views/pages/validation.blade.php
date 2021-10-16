@@ -8,7 +8,7 @@
 <body>
 	<div class="conteneurRens">
 		<div class="coordrens">
-			<h1><a href="#">Ivory Beauty</a></h1>
+			<h1><a href="/">Ivory Beauty</a></h1>
 		<div class="conteneurForm">
 			<form>
 				<div>
