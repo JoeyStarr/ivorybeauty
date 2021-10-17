@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="centt">
-	<form>
+	<form method="POST" action="{{ route('mailenv')}}">
+		@csrf
 		<label>Nom</label>
 		<input type="text" name="nom" placeholder="Votre nom">
 		<label>Email</label>

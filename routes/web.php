@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Mailcontrol;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,6 @@ Route::get('/produit', function () {
     return view('pages/produit');
 })->name('produit');
 
-
 Route::get('/confidentialite', function () {
     return view('pages/politique/confidentialite');
 })->name('confident');
@@ -45,3 +45,5 @@ Route::get('/remboursement', function () {
 Route::get('/validation', function () {
     return view('pages/validation');
 });
+
+Route::post('/contact/mailenv', [Mailcontrol::class, 'bar'])->name('mailenv');
