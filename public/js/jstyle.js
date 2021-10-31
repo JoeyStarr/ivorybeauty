@@ -1,13 +1,13 @@
 setInterval(function(){
     $(document).ready(function() {
     if($(window).width() < 500) {
-      $("#img1").attr("src","img/aa.jpg")
-      $("#img2").attr("src","img/bb.jpg")
-      $("#img3").attr("src","img/cc.jpg")
+      $("#img1").attr("src","/shooting/dove_b.png")
+      $("#img2").attr("src","img/de.png")
+      $("#img3").attr("src","img/deu.png")
     }else{
-      $("#img1").attr("src","img/a.jpg")
-      $("#img2").attr("src","img/b.jpg")
-      $("#img3").attr("src","img/c.jpg")
+      $("#img1").attr("src","/shooting/dove_b.png")
+      $("#img2").attr("src","img/de.png")
+      $("#img3").attr("src","img/deu.png")
     }
   });
 },1000)

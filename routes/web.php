@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mailcontrol;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ValidController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,36 +16,28 @@ use App\Http\Controllers\Mailcontrol;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/homepage');
-})->name('home');
+Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Route::get('/about', function () {
-    return view('pages/apropos');
-})->name('apropos');
+Route::get('/about',[HomeController::class,'about'])->name('apropos');
 
-Route::get('/contact', function () {
-    return view('pages/contact');
-})->name('contact');
+Route::get('/contact',[HomeController::class,'contacte'])->name('contact');
 
-Route::get('/categorie', function () {
-    return view('pages/categorie');
-})->name('categorie');
+Route::get('/categorie/{id}',[HomeController::class,'categories']);
 
-Route::get('/produit', function () {
-    return view('pages/produit');
-})->name('produit');
+Route::post('/forml/{id}',[HomeController::class,'formulaire'])->name('forml');
 
-Route::get('/confidentialite', function () {
-    return view('pages/politique/confidentialite');
-})->name('confident');
+Route::get('/categorie/produit/{id}',[HomeController::class,'produits'])->name('produit');
 
-Route::get('/remboursement', function () {
-    return view('pages/politique/remboursement');
-})->name('rembourser');
+Route::get('/confidentialite',[HomeController::class,'confident'])->name('confident');
 
-Route::get('/validation', function () {
-    return view('pages/validation');
-});
+Route::get('/remboursement',[HomeController::class,'rembourser'])->name('rembourser');
+
+Route::get('/validation/{id}/{quantity}', [ValidController::class,'valider'])->name('validation');
+
+Route::get('/session/get/{id}/{quantity}', [SessionController::class, 'setsession'])->name('setsession');
+
+Route::get('/session/del/', [SessionController::class, 'delsession'])->name('delsession');
 
 Route::post('/contact/mailenv', [Mailcontrol::class, 'bar'])->name('mailenv');
+
+Route::get('/session', [SessionController::class, 'getsession'])->name('session');

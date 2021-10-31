@@ -1,7 +1,4 @@
-
-@extends('welcome')
-
-
+@extends('layouts.app')
 @section('content')
 <!-- CAROUSSEL -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -12,13 +9,13 @@
         </div>
         <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="4000">
-            <img id="img1" src="img/a.jpg" class="d-block w-100" alt="...">
+            <img id="img1" src="/shooting/dove_b.png" class="d-block w-100 mimi" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="3000">
-            <img id="img2" src="img/b.jpg" class="d-block w-100" alt="...">
+            <img id="img2" src="/img/de.png" class="d-block w-100 mimi" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-            <img id="img3" src="img/c.jpg" class="d-block w-100" alt="...">
+            <img id="img3" src="/img/deu.png" class="d-block w-100 mimi" alt="...">
         </div>
         </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

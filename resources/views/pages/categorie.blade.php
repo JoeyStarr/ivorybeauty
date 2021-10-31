@@ -1,51 +1,30 @@
-@extends('welcome')
+@extends('layouts.app')
 @section('content')
 
 <div class="jumbotron jumbotron-fluid">
 		<div class="container jum">
-			<h1>HELLO WORLD</h1>
+			<h1>{{ $showw->nomCate }}</h1>
 		</div>
 	</div>
 	<div class="conteneur-prod">
+	@foreach($showw->produits as $sh)
 		<div class="card-prod">
-			<a href="{{ route('produit') }}"><img src="https://via.placeholder.com/350"></a>
-			<p>American compagnie make everything</p>
+			<a href="{{ route('produit',['id'=>$sh->id]) }}">
+				<img src="{{$sh->illust}}" alt="no_image">
+			</a>
+			<p>{{ $sh->nameProd }}</p>
 			<p>prix</p>	
-			<form>
+			<form method="POST" action="{{ route('forml',['id'=>$sh->id]) }}">
+				@csrf
 				<div class="contenurLabquant">
 					<label class="quantlab" forid="quant">Quantité -</label>
 					<input class="quant" id="quant" type="text" name="quantity" value="1">
 				</div>
-				<button><a href="#">Ajouter au panier</a></button>
-				<button><a href="#">Commander cet produit</a></button>
+				<button name="ensession">Ajouter au panier</button>
+				<button name="prvalider">Commander cet produit</button>
 			</form>
 		</div>
-		<div class="card-prod">
-			<a href="{{ route('produit') }}"><img src="https://via.placeholder.com/350"></a>
-			<p>American compagnie make everything</p>
-			<p>prix</p>	
-			<form>
-				<div class="contenurLabquant">
-					<label class="quantlab" forid="quant">Quantité -</label>
-					<input class="quant" id="quant" type="text" name="quantity" value="1">
-				</div>
-				<button><a href="#">Ajouter au panier</a></button>
-				<button><a href="#">Commander cet produit</a></button>
-			</form>
-		</div>
-		<div class="card-prod">
-			<a href="{{ route('produit') }}"><img src="https://via.placeholder.com/350"></a>
-			<p>American compagnie make everything</p>
-			<p>prix</p>	
-			<form>
-				<div class="contenurLabquant">
-					<label class="quantlab" forid="quant">Quantité -</label>
-					<input class="quant" id="quant" type="text" name="quantity" value="1">
-				</div>
-				<button><a href="#">Ajouter au panier</a></button>
-				<button><a href="#">Commander cet produit</a></button>
-			</form>
-		</div> 
+	@endforeach
 	</div>
 	
 @endsection

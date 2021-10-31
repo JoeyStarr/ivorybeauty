@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 @section('content')
 <div class="cent">
 	<h1>A propos de nous</h1>

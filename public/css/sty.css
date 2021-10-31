@@ -23,6 +23,10 @@
 	padding: 0px 50px;
 }
 
+.mimi{
+	object-fit: cover;
+}
+
 .menuBottom-child:hover
 {
 	cursor: pointer;
@@ -126,7 +130,7 @@
 }
 
 .jumbotron{
-	background: #212121;
+	background: white;
 }
 .jum{
 	text-align: center;
@@ -258,8 +262,8 @@
 
 .apercu img{
 	margin: 20px;
-	width: 300px;
-	height: 300px;
+	width: 600px;
+	height: 600px;
 	object-fit: cover;
 }
 .prod{
@@ -341,18 +345,20 @@
 }
 .listelateralgauche ul h3{
 	padding: 10px 0 0 0;
+	font-size: 18px;
+	color: darkgoldenrod;
 }
 
 .listelateralgauche ul li{
 	list-style-type: none;
-	padding: 10px 0;
+	padding: 20px 0;
 }
 
 .listelateralgauche ul li a{
 	text-decoration: none;
 	margin-left: 20px;
-	font-size: 18px;
-	color: black;
+	font-size: 22px;
+	color: darkgoldenrod;
 }
 
 .listelateralgauche ul::-webkit-scrollbar{

@@ -1,18 +1,15 @@
-@extends('welcome')
+@extends('layouts.app')
 @section('content')
 
 <div class="jumbotron jumbotron-fluid">
 		<div class="container jum">
-			<h1>Je suis le roi du monde</h1>
+			<h1>yo</h1>
 		</div>
 </div>
 <div class="apercu">
-	<img src="https://via.placeholder.com/350">
-	<img src="https://via.placeholder.com/350">
-	<img src="https://via.placeholder.com/350">
-	<img src="https://via.placeholder.com/350">
-	<img src="https://via.placeholder.com/350">
-	<img src="https://via.placeholder.com/350">
+	@foreach($images as $img)
+		<img src="{{ $img->pathImg }}">
+	@endforeach
 </div>
 
 
