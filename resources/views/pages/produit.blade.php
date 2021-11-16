@@ -3,7 +3,7 @@
 
 <div class="jumbotron jumbotron-fluid">
 		<div class="container jum">
-			<h1>yo</h1>
+			<h1>{{ $name->nameProd }}</h1>
 		</div>
 </div>
 <div class="apercu">

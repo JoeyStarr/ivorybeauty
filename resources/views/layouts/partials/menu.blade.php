@@ -11,11 +11,18 @@
         <div class="segpa"></div>
         <div class="listelateralgauche">
             <ul>
-                @foreach($Categorie as $Cate)
-                    <li><span>#</span>
-                        <a href="{{ url('/categorie/'.$Cate->id) }}">{{ $Cate->nomCate }}</a>
-                    </li>
-                @endforeach
+                <li><span>#</span>
+                    <a href="{{ route('natur') }}">Cils 3D naturels</a>
+                </li>
+                <li><span>#</span>
+                    <a href="{{ route('7dvolu') }}">Cils 7D volumineux</a>
+                </li>
+                <li><span>#</span>
+                    <a href="{{ route('bandet') }}">Cils 3D bande transparente</a>
+                </li>
+                <li><span>#</span>
+                    <a href="{{ route('soie') }}">Cils en soie</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -33,24 +40,35 @@
         </div>
         <div class="segpa"></div>
         <div class="conteneur-panier">
-            <div class="panierContain">
+            @php
+                $compt = 0 ;
+                $valum1 = 0 ;
+                $valum2 = 0 ;
+            @endphp
+            @foreach($panier as $pan)
+                <div class="panierContain">
                 <div class="haut">
-                    <img src="img/z.jpg" width="70px" height="70px">
-                    <p>Produit</p>
+                    <img src="{{$pan->illust}}" width="70px" height="70px">
+                    <p>{{$pan->nameProd}}</p>
                 </div>
                 <div class="bas">
-                    <form>
-                        <button>-</button>
-                        <input type="text" name="quantity" value="1">
-                        <button>+</button>
+                    <form method="POST" action="{{ route('modifier',['id'=>$pan->id]) }}">
+                        @csrf
+                        <button name="less">-</button>
+                        <input type="text" name="quantity" value="{{ $valeur[$compt]['1']}}">
+                        <button name="more">+</button>
                     </form>
-                    <p>Prix du produit</p>
+                    <p><?php $valum1 += $valeur[$compt]['1'] * $pan->prixCFA ?> {{  $valeur[$compt]['1'] * $pan->prixCFA}} CFA |<?php $valum2 += $valeur[$compt]['1'] * $pan->prixCAD ?> {{ $valeur[$compt]['1'] * $pan->prixCAD}} USD</p>
                 </div>
-            </div>
+                </div>
+                @php
+                    $compt++;
+                @endphp
+            @endforeach
         </div>
         <div class="sous-total">
-            <p>Le sous-total est de : </br> 45.600.000.000</p>
-            <button><a href="#">Commander</a></button>
+            <p>Le sous-total est de : </br> {{$valum1}} CFA | {{$valum2}} USD </p>
+            <button><a href="{{route('validation')}}">Commander</a></button>
         </div>
     </div>
 <!-- FIN MENU LATERAL DROIT-->

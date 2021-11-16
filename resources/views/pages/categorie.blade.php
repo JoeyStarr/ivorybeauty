@@ -3,17 +3,17 @@
 
 <div class="jumbotron jumbotron-fluid">
 		<div class="container jum">
-			<h1>{{ $showw->nomCate }}</h1>
+			<h1>{{ $categorie->nomCate }}</h1>
 		</div>
 	</div>
 	<div class="conteneur-prod">
-	@foreach($showw->produits as $sh)
+	@foreach($categorie->produits as $sh)
 		<div class="card-prod">
 			<a href="{{ route('produit',['id'=>$sh->id]) }}">
 				<img src="{{$sh->illust}}" alt="no_image">
 			</a>
 			<p>{{ $sh->nameProd }}</p>
-			<p>prix</p>	
+			<p>{{ $sh->prixCFA }} FCFA / {{ $sh->prixCAD }}$ USD</p>	
 			<form method="POST" action="{{ route('forml',['id'=>$sh->id]) }}">
 				@csrf
 				<div class="contenurLabquant">
@@ -26,5 +26,8 @@
 		</div>
 	@endforeach
 	</div>
-	
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jstyle.js"></script>
 @endsection

@@ -96,6 +96,18 @@
 	border-radius: 5px;
 }
 
+.send{
+	background: pink;
+}
+
+.checkeur{
+	display: flex;
+	align-items: center;
+}
+.send:hover{
+	cursor: pointer;
+}
+
 .comment{
 	width: 100%;
 	height: 100px;
@@ -272,7 +284,7 @@
 
 .conteneur-panier{
 	width: 100%;
-	height: 500px;
+	height: 450px;
 	overflow-y: scroll;
 }
 
@@ -294,7 +306,7 @@
 	right: 0;
 	left: 0;
 	height:auto;
-	background: pink;
+	background: #8E05C2;
 	width: 100%;
 	padding: 2px 5px 5px 5px;
 }
@@ -303,6 +315,7 @@
 	height: auto;
 	padding: 5px 0;
 	border: none;
+	background: pink;
 }
 .menud-lateral .sous-total button a{
 	text-decoration: none;
@@ -311,6 +324,7 @@
 	font-size: 16px;
 	font-weight: bold;
 	padding-left: 7px;
+	color: white;
 }
 
 .menu-entete{
@@ -358,7 +372,8 @@
 	text-decoration: none;
 	margin-left: 20px;
 	font-size: 22px;
-	color: darkgoldenrod;
+	font-weight: bold;
+	color: #ea7dc7;
 }
 
 .listelateralgauche ul::-webkit-scrollbar{
@@ -376,10 +391,66 @@
 
 .Ivorybeautysection{
 	width: 100%;
-	height: 100vh;
-	background: lightgrey;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0;
+}
+.boxbox{
+	height: 500px;
+	width: 70%;
+	margin: 20px 0;
+	background: whitesmoke;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	box-shadow: 0px 0px 15px 10px lightgrey;
 }
 
+.boxbox .images{
+	width: 50%;
+	height: 100%;
+
+}
+.images img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.boxbox .write{
+	width: 50%;
+	height: 100%;
+	background: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+.boxbox .write h1{
+	margin-bottom: 14px;
+	font-weight: bolder;
+}
+.boxbox .write p{
+	font-size: 18px;
+}
+
+.boxbox .write button{
+	position: relative;
+	bottom: 1px;
+	left: 5px;
+	border: 2px solid #ea7dc7;
+	border-radius: 5px;
+	background: none;
+	padding: 10px 15px;
+}
+.boxbox .write button a{
+	text-decoration: none;
+	color: #ea7dc7;
+}
+.mob{
+	display: none;
+}
 .footersection{
 	position: relative;
 	left: 0;
@@ -651,6 +722,15 @@
 	display: none;
 }
 
+.cent h1{
+
+}
+
+.cent p{
+	font-size: 28px;
+	margin: 30px 0;
+}
+
 @media screen and (max-width:500px)
 {
 
@@ -698,7 +778,7 @@
 	.conteneur-prod 
 	{
 		width: 100%;
-		background: black;
+		background: white;
 		display: flex;
 		padding: 20px 10px;
 		justify-content: center;
@@ -737,6 +817,10 @@
 		background: white;
 	}
 
+	.sous-total{
+		margin-bottom: 40px;
+	}
+
 	.footersection{
 		position: relative;
 		left: 0;
@@ -759,6 +843,11 @@
 	.medias a{
 		padding: 10px 10px;
 		color: black;
+	}
+	.conteneur-panier{
+		width: 100%;
+		height: 350px;
+		overflow-y: scroll;
 	}
 
 	.conteneur-panier::-webkit-scrollbar{
@@ -844,5 +933,48 @@
 	.centt{
 		width: 100%;
 		margin: 30px 0;
+	}
+
+
+	/***************************************************/
+
+	.Ivorybeautysection{
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 50px 0;
+	}
+	.boxbox{
+		height: auto;
+		width: 90%;
+		margin: 10px 0;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: row;
+		box-shadow: 0px 0px 15px 5px lightgrey;
+	}
+
+	.boxbox .images{
+		width: 100%;
+		height: 300px;
+	}
+	.images img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.boxbox .write{
+		width: 100%;
+		height: auto;
+		background: white;
+	}
+	.cent p{
+		font-size: 22px;
+		margin: 30px 0;
+	}
+
+	.web{
+		display: none;
 	}
 }

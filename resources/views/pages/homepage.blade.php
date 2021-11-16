@@ -33,6 +33,36 @@
 
 @section('content1')
     <div class="Ivorybeautysection">
-        
+        <div class="boxbox">
+            <div class="images">
+                <img src="{{ asset('img/mape.jpeg') }}">
+            </div>
+            <div class="write">
+                <h1>Chez nous ,<br> tout commence par un regard .</h1> 
+                <p>Découvrez notre gamme de produits dans l'air du temps avec les cils les plus hypes du moment tels CANDY, LUNA.. En cliquant sur le menu déroulant en haut à gauche .<br> Nous vous invitons aussi a vous informez sur nous pour mieux comprendre notre vision 💗.</p>
+                <button><a href="{{route('apropos')}}">S'informer sur nous</a></button>
+            </div>
+        </div>
+        <div class="boxbox web">
+            <div class="write">
+                <h1>Pour vous satisfaire ,</h1><h2>Nous nous forçons d'être hautement disponible.</h2> 
+                <p>Notre entreprise livre aux quatres coins du glôbe , asseyez-vous et commandez , nous viendrons à vous mes chéries 😘 .</p>
+                <button><a href="{{route('rembourser')}}">Chaine de distrubution</a></button>
+            </div>
+            <div class="images">
+                <img src="{{ asset('img/courier.jpg') }}">
+            </div>
+        </div>
+        <div class="boxbox mob">
+            <div class="images">
+                <img src="{{ asset('img/courier.jpg') }}">
+            </div>
+            <div class="write">
+                <h1>Pour vous satisfait ,<br> Nous nous forçons d'être hautement disponible.</h1> 
+                <p>Notre entreprise livre aux quatres coins du glôbe , asseyez-vous et commandez , nous viendrons à vous mes chéries &#x1F618; .</p>
+                <button><a href="{{route('rembourser')}}">Chaine de distrubution</a></button>
+            </div>
+            
+        </div>
     </div>
 @endsection

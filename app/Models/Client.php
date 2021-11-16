@@ -10,6 +10,17 @@ class Client extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "nom",
+        "prenom",
+        "numeroTel",
+        "email","pays",
+        "ville",
+        "codePostal"
+    ];
+
+    public $timestamps = false;
+
     public function commandes()
     {
         return $this->hasMany(Commande::class);
