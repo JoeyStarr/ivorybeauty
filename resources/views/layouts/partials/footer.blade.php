@@ -1,7 +1,7 @@
 <!--DEBUT DU FOOTER-->
     <div class="footersection">
         <div class="incin">
-            <p>powered by <a href="https://www.facebook.com/latif.tondossama/" class="lala">Latif</a></p>
+            <p>développé par <a href="https://www.facebook.com/latif.tondossama/" class="lala">Latif</a></p>
             <p>inc. <span>IVORY BEAUTY</span> </br> &copy 2019-2022</p>
         </div>
         <div class="politicy">

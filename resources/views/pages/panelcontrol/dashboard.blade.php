@@ -8,12 +8,11 @@
   </head>
 <body>
     	<div class="conteneurCtrl">
-		      <div class="ctrlnav">
-			       <h1>DASHBOARD</h1>
-			         <a href="{{route('deconnecticut')}}">Deconnection</a>
+		      <div class="ctrlnavv">
+            <div><h2>DASHBOARD</h2></div>
+            <div><a href="{{route('deconnecticut')}}">Deconnection</a></div>
 		      </div>
-		      <div class="container">
-			       <table class="table">
+          <div class="tta"><table class="content-table">
                 <thead>
                       <tr>
                           <th>#</th>
@@ -23,6 +22,7 @@
                           <th>Pays</th>
                           <th>Ville</th>
                           <th>CodePostal</th>
+                          <th>Date commande</th>
                           <th>Statut</th>
                           <th>Produit</th>
                           <th>Quantité</th>
@@ -30,32 +30,33 @@
                       </tr>
                 </thead>
                 <tbody>
-                  @foreach($clients as $client)
+                  @foreach($stampede as $vash)
                     <tr>
-                      <th scope="row">{{$client->id}}</th>
-                      <td>{{$client->nom}}</td>
-                      <td>{{$client->email}}</td>
-                      <td>{{$client->numeroTel}}</td>
-                      <td>{{$client->pays}}</td>
-                      <td>{{$client->ville}}</td>
-                      <td>{{$client->codePostal}}</td>
-                      @foreach($client->commandes as $com)
-                      <td>{{$com->statut}}</td>
-                      @endforeach
-                      <td>prod->nameProd</td>
+                      <th scope="row">{{$vash->id}}</th>
+                      <td>{{$vash->nom}}</td>
+                      <td>{{$vash->email}}</td>
+                      <td>{{$vash->numeroTel}}</td>
+                      <td>{{$vash->pays}}</td>
+                      <td>{{$vash->ville}}</td>
+                      <td>{{$vash->codePostal}}</td>
+                      <td>{{$vash->created_at}}</td>
+                      <td>{{$vash->statut}}</td>
+                      <td>{{$vash->nameProd}}</td>
+                      <td>{{$vash->qteProd}}</td>
                         <td>
-      	                     <form method="POST" action="{{ route('dlC',['id'=>$client->id]) }}" >
-        	                     <input type="hidden" class="form-control" name="numaut" value="1">
+                             <form method="post" action="{{ route('dlc',['id'=>$vash->id]) }}" >
+                                @csrf
+                               <input type="hidden" class="form-control" name="_method" value="delete">
                                 <button class="btn btn-danger btn-flat btn-sm" onclick="return confirm('Êtes-vous sûr ?');" type="submit" name="supp">
-                    	           <em class="fa fa-trash"> </em>Supprimer
+                                 <em class="fa fa-trash"> </em>Supprimer
                                 </button>
                             </form>
                       </td>
                     </tr>
                   @endforeach
                 </tbody>
-          </table>
-		    </div>
+          </table></div>
+			       
 	     </div>
   </body>
 </html>

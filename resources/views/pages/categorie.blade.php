@@ -9,7 +9,7 @@
 	<div class="conteneur-prod">
 	@foreach($categorie->produits as $sh)
 		<div class="card-prod">
-			<a href="{{ route('produit',['id'=>$sh->id]) }}">
+			<a href="{{ route('produit',['name'=>$sh->nameProd]) }}">
 				<img src="{{$sh->illust}}" alt="no_image">
 			</a>
 			<p>{{ $sh->nameProd }}</p>

@@ -3,11 +3,11 @@ setInterval(function(){
     if($(window).width() < 500) {
       $("#img1").attr("src","/shooting/dove_b.png")
       $("#img2").attr("src","img/de.png")
-      $("#img3").attr("src","img/deu.png")
+      $("#img3").attr("src","img/bingerak.png")
     }else{
       $("#img1").attr("src","/shooting/dove_b.png")
       $("#img2").attr("src","img/de.png")
-      $("#img3").attr("src","img/deu.png")
+      $("#img3").attr("src","img/bingerak.png")
     }
   });
 },1000)

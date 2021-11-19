@@ -34,7 +34,7 @@ Route::group(['prefix'=>'categorie'] , function(){
 
 Route::post('/forml/{id}',[HomeController::class,'formulaire'])->name('forml');
 
-Route::get('/produit/{id}',[HomeController::class,'produits'])->name('produit');
+Route::get('/produit/{name}',[HomeController::class,'produits'])->name('produit');
 
 Route::get('/confidentialite',[HomeController::class,'confident'])->name('confident');
 
@@ -53,11 +53,11 @@ Route::post('/commander', [CommanderController::class, 'commander'])->name('comm
 
 Route::post('/validation/modify/{id}', [RedisController::class, 'modify'])->name('modifier');
 
-Route::get('/dashboard', [DashController::class, 'dash'])->middleware(['admin'])->name('dashi');
+Route::get('/dashboard', [DashController::class, 'dash'])->middleware(['admin'])->name('vash');
 
-Route::get('/authen', [DashController::class, 'connectU']);
+Route::get('/xyz', [DashController::class, 'connectU']);
 
 Route::post('/connecticut', [DashController::class, 'connecticut'])->name('connecticut');
 Route::get('/deconnecticut', [DashController::class, 'deconnecticut'])->name('deconnecticut');
 
-Route::get('/suppression/{id}', [DashController::class, 'dlC'])->name('dlC');
+Route::delete('/suppression/{id}', [DashController::class, 'delete'])->name('dlc');

@@ -24,6 +24,6 @@ class Produit extends Model
 
     public function commandes()
     {
-        return $this->belongsToMany(Commande::class);
+        return $this->belongsToMany(Commande::class)->withPivot('qteProd');
     }
 }

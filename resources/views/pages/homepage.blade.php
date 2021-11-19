@@ -15,7 +15,7 @@
             <img id="img2" src="/img/de.png" class="d-block w-100 mimi" alt="...">
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-            <img id="img3" src="/img/deu.png" class="d-block w-100 mimi" alt="...">
+            <img id="img3" src="/img/bingerak.png" class="d-block w-100 mimi" alt="...">
         </div>
         </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

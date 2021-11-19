@@ -13,36 +13,29 @@ use Illuminate\Support\Facades\Redis;
 class HomeController extends Controller
 {
     //Accueil
-    public function index(Request $request)
+    public function index()
     {
-        $Categorie = Categorie::all();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
-        return view('/pages/homepage',compact(['Categorie','panier','valeur']));
+        return view('/pages/homepage',compact(['panier','valeur']));
     }
 
     //PAGE APROPOS 
     public function about()
     {
-        $Categorie = Categorie::all();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
-        $Categorie = Categorie::all();
-        return view('pages/apropos',compact(['Categorie','panier','valeur']));
+        return view('pages/apropos',compact(['panier','valeur']));
     }
 
     //PAGE CONTACT 
@@ -50,14 +43,12 @@ class HomeController extends Controller
     {
         $Categorie = Categorie::all();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
         $Categorie = Categorie::all();
         
         return view('pages/contact',compact(['Categorie','panier','valeur']));
@@ -66,74 +57,66 @@ class HomeController extends Controller
     public function categorie3dN(){
         $categorie = Categorie::find(1);
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
 
     public function categorie7dV(){
         $categorie = Categorie::find(2);
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
     public function categorie3dBT(){
         $categorie = Categorie::find(3);
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
 
     public function categorieSOIE(){
         $categorie = Categorie::find(4);
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
 
     //PAGE PRODUIT 
-    public function produits($id)
+    public function produits($name)
     {
         $Categorie = Categorie::all();
-        $name = Produit::find($id);
+        $name = Produit::where('nameProd',$name)->get();
+        $nom = $name['0']['nameProd'];
+        $id = $name['0']['id'];
         $images = ImgProd::where('produit_id',$id)->get();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
-        return view('pages/produit',compact(['Categorie','images','name','panier','valeur']));
+        return view('pages/produit',compact(['Categorie','images','nom','panier','valeur']));
     }
 
 
@@ -156,37 +139,30 @@ class HomeController extends Controller
     // PAGE POLITIQUE - CONFIDENTIALIT2
     public function confident()
     {
-        $Categorie = Categorie::all();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
-        $Categorie = Categorie::all();
         
-        return view('pages/politique/confidentialite',compact(['Categorie','panier','valeur']));
+        return view('pages/politique/confidentialite',compact(['panier','valeur']));
     }
 
     
     // PAGE POLITIQUE - REMBOURSEMENT
     public function rembourser()
     {
-        $Categorie = Categorie::all();
         $keysall = Redis::keys('*');
-        $valeur = [[]];
-        $panier=[[]];
+        $valeur = [];
+        $panier=[];
         foreach($keysall as $key){
             array_push($valeur,[$key,Redis::get($key)]);
             array_push($panier,Produit::find($key));
         }
-        array_shift($valeur);
-        array_shift($panier);
-        
-        return view('pages/politique/remboursement',compact(['Categorie','panier','valeur']));
+
+        return view('pages/politique/remboursement',compact(['panier','valeur']));
     }
 
 }

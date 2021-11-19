@@ -8,12 +8,15 @@ use App\Models\Produit;
 use App\Models\Commande;
 use App\Models\detailscommande;
 use Illuminate\Support\Facades\Redis;
+use Stripe\Stripe;
 
 
 class CommanderController extends Controller
 {
     public function commander(Request $request)
     {
+        //Pour Stripe
+        $onetwo = "hello world";
         //code redis de base
         $count = Redis::dbsize();
         $idkey = [];
@@ -23,9 +26,9 @@ class CommanderController extends Controller
             $qt = Redis::get($idkey[$i]);
             $prix = Produit::where('id',$idkey[$i])->get()->first();
             //$prixCAD = $prix->prixCAD ;
-            $prixCFA = $prix->prixCFA ;
+            $prixCAD = $prix->prixCAD ;
             $qtn = (int)$qt; 
-            $montant += $qtn * $prixCFA ;
+            $montant += $qtn * $prixCAD ;
         }
 
         //insertion in table client
@@ -59,6 +62,10 @@ class CommanderController extends Controller
             $details->qteProd = Redis::get($idkey[$y]);
             $details->commande_id = $idCmd;
             $details->save();
+        }
+
+        if($request->has('cardBanque')){
+            dd($onetwo);
         }
 
         for ($z=0 ; $z < $count ; $z++) {

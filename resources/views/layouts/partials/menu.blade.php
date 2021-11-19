@@ -68,7 +68,7 @@
         </div>
         <div class="sous-total">
             <p>Le sous-total est de : </br> {{$valum1}} CFA | {{$valum2}} USD </p>
-            <button><a href="{{route('validation')}}">Commander</a></button>
+            <button><a href="{{route('validation')}}">Passer commande</a></button>
         </div>
     </div>
 <!-- FIN MENU LATERAL DROIT-->
