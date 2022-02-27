@@ -12,16 +12,19 @@
         <div class="listelateralgauche">
             <ul>
                 <li><span>#</span>
-                    <a href="{{ route('natur') }}">Cils 3D naturels</a>
+                    <a href="{{ route('acc') }}">Accessoires</a>
                 </li>
                 <li><span>#</span>
-                    <a href="{{ route('7dvolu') }}">Cils 7D volumineux</a>
+                    <a href="{{ route('box') }}">Box</a>
                 </li>
                 <li><span>#</span>
-                    <a href="{{ route('bandet') }}">Cils 3D bande transparente</a>
+                    <a href="{{ route('long') }}">Cils longs</a>
                 </li>
                 <li><span>#</span>
-                    <a href="{{ route('soie') }}">Cils en soie</a>
+                    <a href="{{ route('moyen') }}">Cils moyens</a>
+                </li>
+                <li><span>#</span>
+                    <a href="{{ route('court') }}">Cils courts</a>
                 </li>
             </ul>
         </div>
@@ -48,7 +51,7 @@
             @foreach($panier as $pan)
                 <div class="panierContain">
                 <div class="haut">
-                    <img src="{{$pan->illust}}" width="70px" height="70px">
+                    <img src="{{asset('$pan->illust')}}" width="70px" height="70px">
                     <p>{{$pan->nameProd}}</p>
                 </div>
                 <div class="bas">

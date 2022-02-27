@@ -285,6 +285,21 @@
 						<input type="checkbox" name="cardBanque" value="Yes">
   						<label for="cardBanque">Cliquez-ici pour payer directement</label><br>
 					</div>
+  						<label for="sector">Chosir le lieux si vous etes en Ci</label><br>
+					<select class="mml" name="secteur" id="sector">
+						<option value="Codoy">Cocody,Angré,Riviera - 1000F </option>
+						<option value="Codoy">Ajamé - 1500F</option>
+						<option value="Codoy">Plateau - 1500F</option>
+						<option value="Codoy">Treichville - 1500F</option>
+						<option value="Codoy">Koumassi- 2000F</option>
+						<option value="Codoy">Macory - 2000F</option>
+						<option value="Codoy">Port Bouet - 2000F</option>
+						<option value="Codoy">Abobo - 1500F</option>
+						<option value="Codoy">Yopougon - 2000F</option>
+						<option value="Codoy">Bingerville - 1500F</option>
+						<option value="Codoy">Bassam - 2500F</option>
+						<option value="Codoy">Anyama - 2000F</option>
+					</select>
 					
 					<button class="send">Passer vôtre Commande</button>
 				</div>

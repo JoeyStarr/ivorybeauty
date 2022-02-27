@@ -10,7 +10,11 @@
 	@foreach($categorie->produits as $sh)
 		<div class="card-prod">
 			<a href="{{ route('produit',['name'=>$sh->nameProd]) }}">
-				<img src="{{$sh->illust}}" alt="no_image">
+				@if($sh->illust)
+					<img src="{{$sh->illust}}" alt="no_image">
+				@else
+					<img src="/shooting/magow.jpg" alt="no_image">
+				@endif
 			</a>
 			<p>{{ $sh->nameProd }}</p>
 			<p>{{ $sh->prixCFA }} FCFA / {{ $sh->prixCAD }}$ USD</p>	

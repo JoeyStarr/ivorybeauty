@@ -55,3 +55,19 @@ $(document).ready(function() {
   });
 })
 
+//box whatsapp
+
+$(document).ready(function() {
+    $(".whalog").click(function() {
+    $(".whaDis").show(300);
+    $(".whalog").hide(600);
+  })
+})
+
+$(document).ready(function() {
+    $(".croixWha").click(function() {
+    $(".whaDis").hide(600);
+    $(".whalog").show(600);
+  })
+})
+

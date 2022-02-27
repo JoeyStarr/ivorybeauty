@@ -54,7 +54,7 @@ class HomeController extends Controller
         return view('pages/contact',compact(['Categorie','panier','valeur']));
     }
     //PAGE CATEGORIE
-    public function categorie3dN(){
+    public function Accessoires(){
         $categorie = Categorie::find(1);
         $keysall = Redis::keys('*');
         $valeur = [];
@@ -66,7 +66,7 @@ class HomeController extends Controller
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
 
-    public function categorie7dV(){
+    public function Box(){
         $categorie = Categorie::find(2);
         $keysall = Redis::keys('*');
         $valeur = [];
@@ -77,7 +77,7 @@ class HomeController extends Controller
         }
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
-    public function categorie3dBT(){
+    public function CilsLongs(){
         $categorie = Categorie::find(3);
         $keysall = Redis::keys('*');
         $valeur = [];
@@ -89,8 +89,20 @@ class HomeController extends Controller
         return view('pages/categorie',compact('categorie','panier','valeur'));
     }
 
-    public function categorieSOIE(){
+    public function CilsMoyens(){
         $categorie = Categorie::find(4);
+        $keysall = Redis::keys('*');
+        $valeur = [];
+        $panier=[];
+        foreach($keysall as $key){
+            array_push($valeur,[$key,Redis::get($key)]);
+            array_push($panier,Produit::find($key));
+        }
+        return view('pages/categorie',compact('categorie','panier','valeur'));
+    }
+
+    public function CilsCourts(){
+        $categorie = Categorie::find(5);
         $keysall = Redis::keys('*');
         $valeur = [];
         $panier=[];

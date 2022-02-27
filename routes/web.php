@@ -26,10 +26,11 @@ Route::get('/about',[HomeController::class,'about'])->name('apropos');
 Route::get('/contact',[HomeController::class,'contacte'])->name('contact');
 
 Route::group(['prefix'=>'categorie'] , function(){
-	Route::get('/3D_naturel',[HomeController::class,'categorie3dN'])->name('natur');
-	Route::get('/7D_volimuneux',[HomeController::class,'categorie7dV'])->name('7dvolu');
-	Route::get('/3D_bande_transparente',[HomeController::class,'categorie3dBT'])->name('bandet');
-	Route::get('/Cils_en_soie',[HomeController::class,'categorieSOIE'])->name('soie');
+	Route::get('/Accessoires',[HomeController::class,'Accessoires'])->name('acc');
+	Route::get('/Box',[HomeController::class,'Box'])->name('box');
+	Route::get('/Cils-longs',[HomeController::class,'CilsLongs'])->name('long');
+	Route::get('/Cils-moyens',[HomeController::class,'CilsMoyens'])->name('moyen');
+	Route::get('/Cils-courts',[HomeController::class,'CilsCourts'])->name('court');
 });
 
 Route::post('/forml/{id}',[HomeController::class,'formulaire'])->name('forml');
